@@ -143,7 +143,7 @@
                             <textarea class="form-control" id="message" placeholder="Your Message *" required="required"></textarea>
                             <p class="help-block text-danger"></p>
                             <div  style="color:white">
-                                 <input id="oFile" type="file" runat="server" name="oFile" accept=".jpg,.jpeg,.png"/>
+                                 <input id="oFile" type="file" runat="server" name="oFile" accept="Image/*"/>
                                  <asp:button id="btnUpload"  type="submit" text="Upload" runat="server" visible="false"></asp:button>
                                  <asp:Panel ID="frmConfirmation" Visible="False" Runat="server">
                                  <asp:Label id="lblUploadResult" Runat="server" ForeColor="White"></asp:Label>

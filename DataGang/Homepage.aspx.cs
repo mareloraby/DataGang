@@ -83,7 +83,16 @@ namespace DataGang
                 }
                 else
                 {
+                    String planttype = "";
                     oFile.PostedFile.SaveAs(strFilePath);
+                    if (DropDownList1.SelectedItem.Text.Contains("Plant type")) { Label1.Text = "Please choose plant type"; }
+                    else
+                    {
+
+                        planttype=DropDownList1.SelectedItem.Text;
+
+
+                    
                     //string impath = "D:/Projects/Bayer/train_classes/Backmoth/Backmoth3.jpg";
                     //impath = "C:/Users/salma/Source/Repos/DataGang/DataGang/uploads/Late_Blight (461).jpg";
                     string dire = Server.MapPath(string.Concat("./uploads/"+ strFileName));
@@ -93,7 +102,8 @@ namespace DataGang
 
                     string prog = Server.MapPath("./cabbage.py");
                     Label1.Text = EntryPoint.func(prog, newdire);
-                    //Label1.Text = strFileName + " has been successfully uploaded.";
+                        //Label1.Text = strFileName + " has been successfully uploaded.";
+                    }
                 }
                 // Panel1.Visible = true;
             }

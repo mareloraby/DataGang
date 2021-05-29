@@ -94,9 +94,11 @@
             <asp:DropDownList ID="DropDownList1" class="btn btn-primary btn-xl text-uppercase" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" BackColor="White" ForeColor="Black">
               <asp:ListItem selected hidden>1. Plant type</asp:ListItem>
                 <asp:ListItem>Potato</asp:ListItem>
+                <asp:ListItem>Apple</asp:ListItem>
+                <asp:ListItem>Cabbage</asp:ListItem>
                 <asp:ListItem>Tomato</asp:ListItem>
                 <asp:ListItem>Grapes</asp:ListItem>
-                <asp:ListItem>Apple</asp:ListItem>
+                
             </asp:DropDownList>
 
 

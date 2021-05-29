@@ -24,6 +24,9 @@
 
 
 <body id="page-top">
+<form id="Form1" method="post" runat="server" EncType="multipart/form-data" action="Homepage.aspx">
+
+
 
 
     <!-- Navigation-->
@@ -48,9 +51,19 @@
 
     <header class="masthead">
         <div class="container">
-            <div class="masthead-subheading">Welcome To Data Gang!</div>
+            <div class="masthead-subheading">Welcome To Bug Quest!</div>
             <div class="masthead-heading text-uppercase">Save a plant today!</div>
 
+
+            <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" Width="174px">
+                <asp:ListItem></asp:ListItem>
+                <asp:ListItem></asp:ListItem>
+                <asp:ListItem></asp:ListItem>
+                <asp:ListItem></asp:ListItem>
+            </asp:DropDownList>
+
+
+            <br/>
             <a class="btn btn-primary btn-xl text-uppercase" href="">Take A Photo</a>
 <%--            <input class="btn btn-primary btn-xl text-uppercase" type="file" id="imageFile" capture="user" accept="image/*">--%>
 
@@ -58,7 +71,7 @@
         </div>
     </header>
 
-
+  
     <!-- About-->
     <section class="page-section" id="about">
         <div class="container">
@@ -114,7 +127,6 @@
         </div>
     </section>
 
-
     <!-- Contact-->
     <section class="page-section" id="contact">
         <div class="container">
@@ -122,7 +134,7 @@
                 <h2 class="section-heading text-uppercase">Contact An Expert</h2>
                 <h3 class="section-subheading text-muted">For further assistance, contact one of out experts with your issue.</h3>
             </div>
-            <form id="contactForm" method="post" runat="server" EncType="multipart/form-data" action="Homepage.aspx">
+<%--            <form id="contactForm" method="post" runat="server" EncType="multipart/form-data" action="Homepage.aspx">--%>
                 <div class="row align-items-stretch mb-5">
                     <div class="col-md-6">
                         <div class="form-group">
@@ -163,7 +175,6 @@
                     <button class="btn btn-primary btn-xl text-uppercase" id="sendMessageButton" type="submit">Send Message</button>
                   
                 </div>
-            </form>
         </div>
     </section>
     <!-- Footer-->
@@ -191,9 +202,11 @@
         </div>
     </footer>
 
+
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
+      </form>
 </body>
 </html>

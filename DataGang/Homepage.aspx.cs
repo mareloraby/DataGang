@@ -82,5 +82,12 @@ namespace DataGang
             // Display the result of the upload.
        
         }
+
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

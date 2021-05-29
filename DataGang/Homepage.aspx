@@ -57,7 +57,6 @@
 
 
 
-            <br/>
               
 
             <br/>
@@ -74,11 +73,11 @@
     <section class="page-section" id="about">
         <div class="container">
             <div class="text-center">
-                <h2 class="section-heading text-uppercase">Steps</h2>
+                <h2 class="section-heading text-uppercase"  ><a class="nav-link" style="color:#212529" href="#t1">Steps</a></h2>
                 <h3 class="section-subheading text-muted">It's so simple!</h3>
                 <asp:Label ID="test_space" runat="server" Text="Test"></asp:Label>
             </div>
-            <ul class="timeline">
+            <ul class="timeline" id ="t1">
           
               
                 <li>
@@ -93,7 +92,7 @@
 
                             
             <asp:DropDownList ID="DropDownList1" class="btn btn-primary btn-xl text-uppercase" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" BackColor="White" ForeColor="Black">
-              <asp:ListItem selected hidden>1. Choose plant type</asp:ListItem>
+              <asp:ListItem selected hidden>1. Plant type</asp:ListItem>
                 <asp:ListItem>Potato</asp:ListItem>
                 <asp:ListItem>Tomato</asp:ListItem>
                 <asp:ListItem>Grapes</asp:ListItem>
@@ -112,7 +111,7 @@
                             <h4><br/> </h4>
 
                         </div>
-                        <label for="oFile" class="btn btn-primary btn-xl text-uppercase" > 2. Take or Upload your image </label>
+                        <label for="oFile" class="btn btn-primary btn-xl text-uppercase"  > 2. Take or Upload your image </label>
                         <div class="timeline-body">
 
             <input type="file" id="oFile" name="oFile" accept=".jpg, .jpeg, .png" hidden="hidden" runat="server"/>
@@ -130,8 +129,8 @@
 
                         </div>
                         <div class="timeline-body">
-
-                          <asp:button id="btnUpload"  type="submit" text="3. Get Diagnosis!" runat="server" class="btn btn-primary btn-xl text-uppercase" ></asp:button>
+                             <label for="btnUpload" class="btn btn-primary btn-xl text-uppercase"  > 3. Get Diagnosis! </label>
+                          <asp:button id="btnUpload"  type="submit" text="3. Get Diagnosis!" hidden="hidden" runat="server" class="btn btn-primary btn-xl text-uppercase" ></asp:button>
                             </br>
                           <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
 
@@ -146,7 +145,7 @@
                     <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/3.jpg" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
-                            <h4 style="color:#ffc800 " class="text-uppercase"></br> 4. Check possible treatements</h4>
+                            <a  class="text-uppercase btn btn-primary btn-xl" style="color:white" > 4. Recommended Treatements</a>
 
                         </div>
                         <div class="timeline-body"></div>

@@ -33,6 +33,7 @@ namespace DataGang
         {
             // Put user code to initialize the page here
             Label1.Text = "";
+            //summary_label.Text = "";
             //Process.Start("C:\test.bat");
             //string impath = "D:/Projects/Bayer/train_classes/Backmoth/Backmoth3.jpg";
             //string prog = Server.MapPath("./cabbage.py");
@@ -99,9 +100,32 @@ namespace DataGang
                     System.Diagnostics.Debug.WriteLine(dire);
                     string newdire = dire.Replace("\\", "/");
                     System.Diagnostics.Debug.WriteLine(newdire);
+                        string prog = "";
+                        
+                        switch (planttype){
+                            case "Cabbage":  prog = Server.MapPath("./cabbage.py"); break;
+                            case "Apple":  prog = Server.MapPath("./fruit.py"); break;
+                            case "Tomato":  prog = Server.MapPath("./tomato.py"); break;
+                            case "Grapes":  prog = Server.MapPath("./fruit.py"); break;
+                            case "Potato":  prog = Server.MapPath("./potato.py"); break;
+                            default: Label1.Text = "please select a plant type"; break;
 
-                    string prog = Server.MapPath("./cabbage.py");
-                    Label1.Text = EntryPoint.func(prog, newdire);
+                        }
+
+
+                        String diagnosis = EntryPoint.func(prog, newdire);
+
+                        Label1.Text = diagnosis;
+                        string infoprog = Server.MapPath("./summary_link.py");
+                        if (diagnosis.ToLower().Trim().Contains("health") == false)
+                        {
+                            System.Diagnostics.Debug.WriteLine("diagnosis.ToLower().Trim()");
+
+                            string summary_info = EntryPoint.get_info_python(infoprog, diagnosis.Trim());
+                            System.Diagnostics.Debug.WriteLine(summary_info);
+
+                            summary_label.Text = summary_info;
+                        }
                         //Label1.Text = strFileName + " has been successfully uploaded.";
                     }
                 }
@@ -132,6 +156,37 @@ namespace DataGang
     public partial class EntryPoint
     {
         public static string func(string prog, string impath)
+        {
+
+            int x = 1;
+            int y = 2;
+            string progToRun = prog;
+            //"hello.py";
+            char[] splitter = { '\r' };
+
+            Process proc = new Process();
+            proc.StartInfo.FileName = "python.exe";
+            proc.StartInfo.RedirectStandardOutput = true;
+            proc.StartInfo.UseShellExecute = false;
+
+            // call hello.py to concatenate passed parameters
+            //proc.StartInfo.Arguments = string.Concat(progToRun, " ", x.ToString(), " ", y.ToString());
+            proc.StartInfo.Arguments = string.Concat(progToRun, " ", impath);
+            proc.Start();
+
+            StreamReader sReader = proc.StandardOutput;
+            string[] output = sReader.ReadToEnd().Split(splitter);
+
+            foreach (string s in output)
+                System.Diagnostics.Debug.WriteLine(s);
+
+            proc.WaitForExit();
+            proc.Close();
+            //Console.ReadLine();
+            return output[0];
+        }
+
+        public static string get_info_python(string prog, string impath)
         {
 
             int x = 1;

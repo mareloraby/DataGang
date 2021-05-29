@@ -110,7 +110,7 @@
                             <h4><br/> </h4>
 
                         </div>
-                        <label for="oFile" class="btn btn-primary btn-xl text-uppercase" > 2. Take or Upload your image </label>
+                        <label for="oFile" class="btn btn-primary btn-xl text-uppercase"  > 2. Take or Upload your image </label>
                         <div class="timeline-body">
 
             <input type="file" id="oFile" name="oFile" accept=".jpg, .jpeg, .png" hidden="hidden" runat="server"/>
@@ -128,8 +128,8 @@
 
                         </div>
                         <div class="timeline-body">
-
-                          <asp:button id="btnUpload"  type="submit" text="3. Get Diagnosis!" runat="server" class="btn btn-primary btn-xl text-uppercase" ></asp:button>
+                             <label for="btnUpload" class="btn btn-primary btn-xl text-uppercase"  > 3. Get Diagnosis! </label>
+                          <asp:button id="btnUpload"  type="submit" text="3. Get Diagnosis!" hidden="hidden" runat="server" class="btn btn-primary btn-xl text-uppercase" ></asp:button>
                             </br>
                           <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
 

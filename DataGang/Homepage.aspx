@@ -76,6 +76,7 @@
             <div class="text-center">
                 <h2 class="section-heading text-uppercase">Steps</h2>
                 <h3 class="section-subheading text-muted">It's so simple!</h3>
+                <asp:Label ID="test_space" runat="server" Text="Test"></asp:Label>
             </div>
             <ul class="timeline">
           

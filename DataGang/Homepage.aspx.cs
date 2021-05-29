@@ -11,8 +11,12 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.HtmlControls;
 using System.IO;
+using System.Diagnostics;
+using System.Threading.Tasks;
 namespace DataGang
 {
+    
+       
 
     public partial class Homepage : System.Web.UI.Page
     {
@@ -21,11 +25,20 @@ namespace DataGang
         protected System.Web.UI.WebControls.Panel frmConfirmation;
         protected System.Web.UI.HtmlControls.HtmlInputFile oFile;
 
-        private void Page_Load(object sender, System.EventArgs e)
+        
+
+  
+
+    private void Page_Load(object sender, System.EventArgs e)
         {
             // Put user code to initialize the page here
             Label1.Text = "";
-
+            //Process.Start("C:\test.bat");
+            string impath = "D:/Projects/Bayer/train_classes/Backmoth/Backmoth3.jpg";
+            string prog = Server.MapPath("./cabbage.py");
+            test_space.Text = EntryPoint.func(prog, impath);
+            //proc.WaitForExit();
+            //Console.ReadLine();
 
         }
 
@@ -65,7 +78,7 @@ namespace DataGang
                 strFilePath = strFolder + strFileName;
                 if (File.Exists(strFilePath))
                 {
-                    Label1.Text = "You've already uploaded " + strFileName ;
+                    Label1.Text = "You've already uploaded " + strFileName;
 
                 }
                 else
@@ -73,7 +86,7 @@ namespace DataGang
                     oFile.PostedFile.SaveAs(strFilePath);
                     Label1.Text = strFileName + " has been successfully uploaded.";
                 }
-               // Panel1.Visible = true;
+                // Panel1.Visible = true;
             }
             else
             {
@@ -84,14 +97,51 @@ namespace DataGang
 
             }
             // Display the result of the upload.
-       
+
         }
 
-        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+
+ 
+    protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
 
     }
+
+    public partial class EntryPoint
+    {
+        public static string func(string prog, string impath)
+        {
+
+            int x = 1;
+            int y = 2;
+            string progToRun = prog;
+            //"hello.py";
+            char[] splitter = { '\r' };
+
+            Process proc = new Process();
+            proc.StartInfo.FileName = "python.exe";
+            proc.StartInfo.RedirectStandardOutput = true;
+            proc.StartInfo.UseShellExecute = false;
+
+            // call hello.py to concatenate passed parameters
+            //proc.StartInfo.Arguments = string.Concat(progToRun, " ", x.ToString(), " ", y.ToString());
+            proc.StartInfo.Arguments = string.Concat(progToRun, " ", impath);
+            proc.Start();
+
+            StreamReader sReader = proc.StandardOutput;
+            string[] output = sReader.ReadToEnd().Split(splitter);
+
+            foreach (string s in output)
+                System.Diagnostics.Debug.WriteLine(s);
+
+            proc.WaitForExit();
+            proc.Close();
+            //Console.ReadLine();
+            return output[0];
+        }
+    }
+
 }

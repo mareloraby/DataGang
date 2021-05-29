@@ -34,9 +34,9 @@ namespace DataGang
             // Put user code to initialize the page here
             Label1.Text = "";
             //Process.Start("C:\test.bat");
-            string impath = "D:/Projects/Bayer/train_classes/Backmoth/Backmoth3.jpg";
-            string prog = Server.MapPath("./cabbage.py");
-            test_space.Text = EntryPoint.func(prog, impath);
+            //string impath = "D:/Projects/Bayer/train_classes/Backmoth/Backmoth3.jpg";
+            //string prog = Server.MapPath("./cabbage.py");
+            //test_space.Text = EntryPoint.func(prog, impath);
             //proc.WaitForExit();
             //Console.ReadLine();
 
@@ -63,7 +63,7 @@ namespace DataGang
             string strFileName;
             string strFilePath;
             string strFolder;
-            strFolder = Server.MapPath("./");
+            strFolder = Server.MapPath("./uploads/");
             // Get the name of the file that is posted.
             strFileName = oFile.PostedFile.FileName;
             strFileName = Path.GetFileName(strFileName);
@@ -84,7 +84,16 @@ namespace DataGang
                 else
                 {
                     oFile.PostedFile.SaveAs(strFilePath);
-                    Label1.Text = strFileName + " has been successfully uploaded.";
+                    //string impath = "D:/Projects/Bayer/train_classes/Backmoth/Backmoth3.jpg";
+                    //impath = "C:/Users/salma/Source/Repos/DataGang/DataGang/uploads/Late_Blight (461).jpg";
+                    string dire = Server.MapPath(string.Concat("./uploads/"+ strFileName));
+                    System.Diagnostics.Debug.WriteLine(dire);
+                    string newdire = dire.Replace("\\", "/");
+                    System.Diagnostics.Debug.WriteLine(newdire);
+
+                    string prog = Server.MapPath("./cabbage.py");
+                    Label1.Text = EntryPoint.func(prog, newdire);
+                    //Label1.Text = strFileName + " has been successfully uploaded.";
                 }
                 // Panel1.Visible = true;
             }

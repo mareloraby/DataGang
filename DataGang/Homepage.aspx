@@ -135,6 +135,7 @@
                           <asp:button id="btnUpload"  type="submit" text="3. Get Diagnosis!" hidden="hidden" runat="server" class="btn btn-primary btn-xl text-uppercase" ></asp:button>
                             </br>
                           <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+                            <asp:Label ID="summary_label" runat="server" Text=""></asp:Label>
 
 
 

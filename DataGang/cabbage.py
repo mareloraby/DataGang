@@ -1,12 +1,12 @@
 #!/usr/bin/env</font>
- 
+import os
 import sys
 import tensorflow as tf
 import numpy as np
 from tensorflow import keras
 import cv2
 import matplotlib.pyplot as plt
- 
+import pathlib 
 
 def preprocessing(input_tensor):
     output_tensor = tf.cast(input_tensor, dtype=tf.float32)
@@ -14,18 +14,22 @@ def preprocessing(input_tensor):
     # output_tensor = keras.keras_applications.mobilenet.preprocess_input(output_tensor, data_format="channels_last")
     return output_tensor
 
-model2 = keras.models.load_model('C:/Users/salma/source/repos/DataGang/my_modellr104.h5')
+absolutepath = os.path.abspath(__file__)
+fileDirectory = os.path.dirname(absolutepath).replace('\\', '/')
+model2 = keras.models.load_model(fileDirectory+'/models/my_modellr104.h5')
 def make_prediction(path):
     image=cv2.imread(path)
     image =preprocessing([image])
     pred=model2.predict(image)
-    classes={0:'Backmoth', 1:'Leafminer', 2:'Mildew'}
+    classes={0:'Diamondback_moth', 1:'Leafminer', 2:'Mildew'}
     return(classes[pred.argmax()])
 def main():
-    
+    os.getcwd()
     pat=sys.argv
-    
-    print(make_prediction(pat[1]))
+    try:
+        print(make_prediction(pat[1]))
+    except:
+        print("file name cannot contain spaces")
 
 if __name__=='__main__':
     main()

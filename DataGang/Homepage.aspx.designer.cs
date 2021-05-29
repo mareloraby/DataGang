@@ -24,15 +24,6 @@ namespace DataGang
         protected global::System.Web.UI.HtmlControls.HtmlForm Form1;
 
         /// <summary>
-        /// test_space control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label test_space;
-
-        /// <summary>
         /// DropDownList1 control.
         /// </summary>
         /// <remarks>
@@ -51,13 +42,31 @@ namespace DataGang
         protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// summary_label control.
+        /// Labelsummary control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label summary_label;
+        protected global::System.Web.UI.WebControls.Label Labelsummary;
+
+        /// <summary>
+        /// btnTreat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnTreat;
+
+        /// <summary>
+        /// lbltreat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbltreat;
 
         /// <summary>
         /// in control.

@@ -75,7 +75,6 @@
             <div class="text-center">
                 <h2 class="section-heading text-uppercase"  ><a class="nav-link" style="color:#212529" href="#t1">Steps</a></h2>
                 <h3 class="section-subheading text-muted">It's so simple!</h3>
-                <asp:Label ID="test_space" runat="server" Text="Test"></asp:Label>
             </div>
             <ul class="timeline" id ="t1">
           
@@ -132,11 +131,12 @@
                         </div>
                         <div class="timeline-body">
                              <label for="btnUpload" class="btn btn-primary btn-xl text-uppercase"  > 3. Get Diagnosis! </label>
-                          <asp:button id="btnUpload"  type="submit" text="3. Get Diagnosis!" hidden="hidden" runat="server" class="btn btn-primary btn-xl text-uppercase" ></asp:button>
+                          <asp:button id="btnUpload" type="submit" text="3. Get Diagnosis!" hidden="hidden" runat="server" class="btn btn-primary btn-xl text-uppercase" ></asp:button>
                             </br>
-                          <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
-                            <asp:Label ID="summary_label" runat="server" Text=""></asp:Label>
+                            <asp:Label ID="Label1" runat="server" ></asp:Label>
+                            <br/>
 
+                            <asp:Label ID="Labelsummary" runat="server" Text="" style="overflow-wrap: break-word;"></asp:Label>
 
 
                         </div>
@@ -148,7 +148,11 @@
                     <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/3.jpg" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
-                            <a  class="text-uppercase btn btn-primary btn-xl" style="color:white" > 4. Recommended Treatements</a>
+                           <label for="btnTreat" class="btn btn-primary btn-xl text-uppercase"  > 4. Recommended Treatements </label>
+                            <asp:button ID="btnTreat" type="submit"  Text=" 4. Recommended Treatements" hidden="hidden"  runat="server" OnClick="btnTreat_Click" ></asp:button>
+                            <br/>
+                            <asp:Label ID="lbltreat" runat="server" Text=""></asp:Label>
+
 
                         </div>
                         <div class="timeline-body"></div>

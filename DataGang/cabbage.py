@@ -1,4 +1,4 @@
-#!/usr/bin/env</font>
+#!/usr/bin/env/
 import os
 import sys
 import tensorflow as tf
@@ -17,7 +17,7 @@ def preprocessing(input_tensor):
 absolutepath = os.path.abspath(__file__)
 fileDirectory = os.path.dirname(absolutepath).replace('\\', '/')
 model2 = keras.models.load_model(fileDirectory+'/models/my_modellr104.h5')
-#model2 = keras.models.load_model("https://drive.google.com/file/d/151PogBph0X25V_0QUOgUwGiPbOtSYeUJ/view?usp=sharing")
+
 def make_prediction(path):
     image=cv2.imread(path)
     image =preprocessing([image])

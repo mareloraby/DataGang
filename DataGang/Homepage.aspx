@@ -67,8 +67,11 @@
             <br/>
 
             <br/>
-            <a class="btn btn-primary btn-xl text-uppercase" href="">Take A Photo</a>
+<%--            <a class="btn btn-primary btn-xl text-uppercase" href="">Take A Photo</a>--%>
 <%--            <input class="btn btn-primary btn-xl text-uppercase" type="file" id="imageFile" capture="user" accept="image/*">--%>
+            <label class="btn btn-primary btn-xl text-uppercase" for="image_uploads">Take/Choose image to upload </label>
+            <input type="file" id="image_uploads" name="image_uploads" accept=".jpg, .jpeg, .png" hidden="hidden">
+                
 
 
         </div>

@@ -24,7 +24,9 @@ namespace DataGang
         private void Page_Load(object sender, System.EventArgs e)
         {
             // Put user code to initialize the page here
-            
+            Label1.Text = "";
+
+
         }
 
         override protected void OnInit(EventArgs e)
@@ -55,27 +57,29 @@ namespace DataGang
             if (oFile.Value != "")
             {
                 // Create the directory if it does not exist.
-                //if (!Directory.Exists(strFolder))
-                //{
-                //    Directory.CreateDirectory(strFolder);
-                //}
+                if (!Directory.Exists(strFolder))
+                {
+                    Directory.CreateDirectory(strFolder);
+                }
                 // Save the uploaded file to the server.
-                //strFilePath = strFolder + strFileName;
-                //if (File.Exists(strFilePath))
-                //{
-                //    lblUploadResult.Text = strFileName + " already exists on the server!";
+                strFilePath = strFolder + strFileName;
+                if (File.Exists(strFilePath))
+                {
+                    Label1.Text = "You've already uploaded " + strFileName ;
 
-                //}
-                //else
-                //{
-                //    oFile.PostedFile.SaveAs(strFilePath);
-                //    lblUploadResult.Text = strFileName + " has been successfully uploaded.";
-                //}
-                Panel1.Visible = true;
+                }
+                else
+                {
+                    oFile.PostedFile.SaveAs(strFilePath);
+                    Label1.Text = strFileName + " has been successfully uploaded.";
+                }
+               // Panel1.Visible = true;
             }
             else
             {
-                lblUploadResult.Text = "Click 'Browse' to select the file to upload.";
+                //lblUploadResult.Text = "Click 'Browse' to select the file to upload.";
+                Label1.Text = "Upload a photo first.";
+
                 frmConfirmation.Visible = true;
 
             }

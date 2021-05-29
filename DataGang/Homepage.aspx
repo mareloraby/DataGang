@@ -55,23 +55,15 @@
             <div class="masthead-heading text-uppercase">Save a plant today!</div>
 
 
-            <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged"  CssClass="btn btn-primary btn-xl" BackColor="White" ForeColor="Black">
-              <asp:ListItem selected hidden>Choose Plant Type</asp:ListItem>
-                <asp:ListItem></asp:ListItem>
-                <asp:ListItem></asp:ListItem>
-                <asp:ListItem></asp:ListItem>
-                <asp:ListItem></asp:ListItem>
-            </asp:DropDownList>
 
-  <br/> 
+
             <br/>
+              
 
             <br/>
 <%--            <a class="btn btn-primary btn-xl text-uppercase" href="">Take A Photo</a>--%>
 <%--            <input class="btn btn-primary btn-xl text-uppercase" type="file" id="imageFile" capture="user" accept="image/*">--%>
-            <label class="btn btn-primary btn-xl text-uppercase" for="image_uploads">Take/Choose image to upload </label>
-            <input type="file" id="image_uploads" name="image_uploads" accept=".jpg, .jpeg, .png" hidden="hidden">
-                
+
 
 
         </div>
@@ -89,47 +81,74 @@
           
               
                 <li>
-                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/1.jpg" alt="..." /></div>
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/0.jpg" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
-                            <h4>1. Enter Type</h4>
+                            <h4 style="color:#ffc800" class="text-uppercase"></br></h4>
+
 
                         </div>
-                        <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                        <div class="timeline-body">
+
+                            
+            <asp:DropDownList ID="DropDownList1" class="btn btn-primary btn-xl text-uppercase" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" BackColor="White" ForeColor="Black">
+              <asp:ListItem selected hidden>1. Choose plant type</asp:ListItem>
+                <asp:ListItem>Potato</asp:ListItem>
+                <asp:ListItem>Tomato</asp:ListItem>
+                <asp:ListItem>Grapes</asp:ListItem>
+                <asp:ListItem>Apple</asp:ListItem>
+            </asp:DropDownList>
+
+
+                </div>
                     </div>
                 </li>
 
                 <li class="timeline-inverted">
-                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/2.jpg" alt="..." /></div>
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/1.jpg" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
-                            <h4>2.Snap Image</h4>
+                            <h4><br/> </h4>
 
                         </div>
-                        <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                        <label for="oFile" class="btn btn-primary btn-xl text-uppercase" > 2. Take or Upload your image </label>
+                        <div class="timeline-body">
+
+            <input type="file" id="oFile" name="oFile" accept=".jpg, .jpeg, .png" hidden="hidden" runat="server"/>
+
+
+                        </div>
                     </div>
                 </li>
 
                 <li>
-                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/3.jpg" alt="..." /></div>
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/2.jpg" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
-                            <h4>3. Get Diagnosis</h4>
+                            <h4></br></h4>
 
                         </div>
-                        <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                        <div class="timeline-body">
+
+                          <asp:button id="btnUpload"  type="submit" text="3. Get Diagnosis!" runat="server" class="btn btn-primary btn-xl text-uppercase" ></asp:button>
+                            </br>
+                          <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+
+
+
+                        </div>
                     </div>
                 </li>
 
 
                    <li class="timeline-inverted">
-                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/2.jpg" alt="..." /></div>
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/3.jpg" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
-                            <h4>4. Check possible treatements</h4>
+                            <h4 style="color:#ffc800 " class="text-uppercase"></br> 4. Check possible treatements</h4>
 
                         </div>
-                        <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                        <div class="timeline-body"></div>
                     </div>
                 </li>
 
@@ -162,25 +181,25 @@
                 <div class="row align-items-stretch mb-5">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <input class="form-control" id="name" type="text" placeholder="Your Name *" required="required" />
+                            <input class="form-control" id="name" type="text" placeholder="Your Name *" />
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="form-group">
-                            <input class="form-control" id="email" type="email" placeholder="Your Email *" required="required" />
+                            <input class="form-control" id="email" type="email" placeholder="Your Email *"  />
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="form-group mb-md-0">
-                            <input class="form-control" id="phone" type="tel" placeholder="Your Phone *" required="required" />
+                            <input class="form-control" id="phone" type="tel" placeholder="Your Phone *" />
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group form-group-textarea mb-md-0">
-                            <textarea class="form-control" id="message" placeholder="Your Message *" required="required"></textarea>
+                            <textarea class="form-control" id="message" placeholder="Your Message *" ></textarea>
                             <p class="help-block text-danger"></p>
                             <div  style="color:white">
-                                 <input id="oFile" type="file" runat="server" name="oFile" accept="Image/*"/>
-                                 <asp:button id="btnUpload"  type="submit" text="Upload" runat="server" visible="false"></asp:button>
+                                 <input id="in" type="file" runat="server" name="oFile" accept="Image/*" /> 
+<%--                                 <asp:button id="btnUpload"  type="submit" text="Upload" runat="server" visible="false"></asp:button>--%>
                                  <asp:Panel ID="frmConfirmation" Visible="False" Runat="server">
                                  <asp:Label id="lblUploadResult" Runat="server" ForeColor="White"></asp:Label>
                                  </asp:Panel>   

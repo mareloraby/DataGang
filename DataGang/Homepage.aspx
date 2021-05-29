@@ -55,13 +55,16 @@
             <div class="masthead-heading text-uppercase">Save a plant today!</div>
 
 
-            <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" Width="174px">
+            <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged"  CssClass="btn btn-primary btn-xl" BackColor="White" ForeColor="Black">
+              <asp:ListItem selected hidden>Choose Plant Type</asp:ListItem>
                 <asp:ListItem></asp:ListItem>
                 <asp:ListItem></asp:ListItem>
                 <asp:ListItem></asp:ListItem>
                 <asp:ListItem></asp:ListItem>
             </asp:DropDownList>
 
+  <br/> 
+            <br/>
 
             <br/>
             <a class="btn btn-primary btn-xl text-uppercase" href="">Take A Photo</a>

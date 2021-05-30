@@ -1,28 +1,38 @@
-image upload guidlines:
-- path must not contain spaces
-- same image name cannot be uploaded twice
+
+# Bug Quest, a web-application, targeted for farmers and home gardeners.
 
 
-To run the application, the following python packages are required:
-os
-sys
-numpy
-tensorflow
-matplotlib
-pyplot
-keras
-spaCy
-en_core_web_sm
-wikipedia
-gensim==3.8.1
-argparse
-googlesearch 
-pathlib 
-cv2
+## Image uploading guidlines
+- Path must not contain spaces
+- Same image name cannot be uploaded twice
+- Using a mobile phone with an embedded camera, user will be prompted to choose whether to upload or capture an image.
 
-Alternatively, in Homepage.aspx.cs, you can get stub returns values from methods by:
-- commenting line 282 and uncommenting line 283 to get dummy info and links
-- commenting line 250 and uncommenting line 251to get a diagnosis from thes set: ('Apple_scab',
+
+## Running
+
+To run the application, the following python packages are required
+- os
+- sys
+- numpy
+- tensorflow
+- matplotlib
+- pyplot
+- keras
+- spaCy
+- en_core_web_sm
+- wikipedia
+- gensim==3.8.1
+- argparse
+- googlesearch 
+- pathlib 
+- cv2
+
+
+Alternatively, in [Homepage.aspx.cs](https://github.com/mareloraby/DataGang/blob/master/DataGang/Homepage.aspx.cs), you can get stub returns values from methods by:
+- commenting line [282](https://github.com/mareloraby/DataGang/blob/cedf5c5919b4f3f858fb86ac3e8a96565ed7e9e8/DataGang/Homepage.aspx.cs#L282) and uncommenting line [283](https://github.com/mareloraby/DataGang/blob/cedf5c5919b4f3f858fb86ac3e8a96565ed7e9e8/DataGang/Homepage.aspx.cs#L283) to get dummy info and links
+- commenting line [250](https://github.com/mareloraby/DataGang/blob/cedf5c5919b4f3f858fb86ac3e8a96565ed7e9e8/DataGang/Homepage.aspx.cs#L250) and uncommenting line [251](https://github.com/mareloraby/DataGang/blob/cedf5c5919b4f3f858fb86ac3e8a96565ed7e9e8/DataGang/Homepage.aspx.cs#L251) to get a diagnosis from this set:
+```
+  ('Apple_scab',
   'Black_rot',
   'Gymnosporangium',
   'healthy_apple',
@@ -30,20 +40,22 @@ Alternatively, in Homepage.aspx.cs, you can get stub returns values from methods
   'Esca_Black_Measles',
   'Isariopsis_Leaf_Spot',
   'healthy_grape', 
-'Diamondback_moth',
- 'Leafminer',
- 'Mildew',
- 'Bacterial_spot',
- 'Black_mold',
- 'Gray_spot',
-'Tomato_Late_blight',
-'Healthy_Tomato',
- 'Powdery_mildew',
-'Healthy potato',
- 'potato_late_blight')
+  'Diamondback_moth',
+  'Leafminer',
+  'Mildew',
+  'Bacterial_spot',
+  'Black_mold',
+  'Gray_spot',
+  'Tomato_Late_blight',
+  'Healthy_Tomato',
+  'Powdery_mildew',
+  'Healthy potato',
+  'potato_late_blight')
+  ```
+ 
+## The development and testing python environment for further reference
+  ```
 
-
-the development and testing python environment for further reference:
 
 absl-py                   0.12.0                   pypi_0    pypi
 astunparse                1.6.3                    pypi_0    pypi
@@ -134,3 +146,6 @@ wheel                     0.36.2             pyhd3eb1b0_0
 wikipedia                 1.4.0                    pypi_0    pypi
 wincertstore              0.2                      py37_0
 wrapt                     1.12.1                   pypi_0    pypi
+
+  ```
+

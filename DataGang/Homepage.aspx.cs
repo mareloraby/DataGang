@@ -120,7 +120,7 @@ namespace DataGang
 
 
 
-                        Label1.Text = diagnosis;
+                        Label1.Text = diagnosis.Replace("_", " ");
                         string infoprog = Server.MapPath("./summary_link.py");
                         if (diagnosis.ToLower().Trim().Contains("health") == false)
                         {
@@ -128,7 +128,7 @@ namespace DataGang
 
                             string summary_info = EntryPoint.get_info_python(infoprog, diagnosis.Trim());
                             System.Diagnostics.Debug.WriteLine(summary_info);
-
+                            summary_info = summary_info.Replace("\n", "\n ");
                             Labelsummary.Text = summary_info;
                         }
                         //Label1.Text = strFileName + " has been successfully uploaded.";
@@ -162,10 +162,10 @@ namespace DataGang
 
             treat[0] = new tuple("Apple", "Apple scab", "Bonide®️ Sulfur Plant Fungicide", "Organocide®️ Plant Doctor", "Bonide®️ Orchard Spray");
             treat[1] = new tuple("Apple", "Black_rot", "Fungicide spray", "copper-based fungicide", "");
-            treat[2] = new tuple("Apple", "Cedar_apple_rust", "Immunox", "", "");
+            treat[2] = new tuple("Apple", "Gymnosporangium", "Immunox", "", "");
             treat[3] = new tuple("Grapes", "Black_rot", "captan", "myclobutanil", "");
-            treat[4] = new tuple("Grapes", "Esca_(Black_Measles)", "Removed and burned", "", "");
-            treat[5] = new tuple("Grapes", "Leaf_blight_(Isariopsis_Leaf_Spot)", "Bonide®️ Sulfur Plant Fungicide", "Organocide®️ Plant Doctor", "");
+            treat[4] = new tuple("Grapes", "Esca_Black_Measles", "Removed and burned", "", "");
+            treat[5] = new tuple("Grapes", "Isariopsis_Leaf_Spot", "Bonide®️ Sulfur Plant Fungicide", "Organocide®️ Plant Doctor", "");
             treat[6] = new tuple("Tomato", "Bacterial_spot", "Infected plant should be removed and burned", "", "");
             treat[7] = new tuple("Tomato", "Black_mold", "Daconil®️ fungicides", "Daconi", "");
             treat[8] = new tuple("Tomato", "Gray_spot", "copper spray", "Serenade", "chlorothalonil");
@@ -177,7 +177,7 @@ namespace DataGang
             // treat[14] = new tuple("Potato", "Healthy potato", "", "", "");
             treat[14] = new tuple("Potato", "potato_late_blight", "copper spray", "Serenade", "chlorothalonil");
 
-            String treatment = "You may try any of: ";
+            String treatment = "You may try: ";
             String planttype2 = DropDownList1.SelectedItem.Text;
             String diagnosis1 = (String) Session["field1"]; 
 
@@ -247,9 +247,8 @@ namespace DataGang
             proc.WaitForExit();
             proc.Close();
             //Console.ReadLine();
-            //  return output[0];
-
-            return "Mildew";
+            return output[0];
+            //return "Mildew";
         }
 
         public static string get_info_python(string prog, string impath)
@@ -280,8 +279,8 @@ namespace DataGang
             proc.WaitForExit();
             proc.Close();
             //Console.ReadLine();
-            //  return output[0];
-            return "(In Old English, mildew meant honeydew (a substance secreted by aphids on leaves, formerly thought to distill from the air like dew), and later came to mean mould or fungus.\n Mould growth found on cellulose-based substrates or materials where moisture levels are high (90 percent or greater) is often Stachybotrys chartarum.\n Glass, plastic, and concrete provide no food for organic growth and as such cannot support mould or mildew growth alone without bio-film present.\n == Environmental conditions ==\n The requirements are a food source (any organic material), sufficient ambient moisture (a relative humidity of between 62 and 93 percent), and reasonable warmth (77 °F (25 °C) to 88 °F (31 °C) is optimal, but some growth can occur anywhere between freezing and 95 °F (35 °C)).\n Preventing the growth of mildew therefore requires a balance between moisture and temperature.\n Air temperatures at or below 70 °F (21 °C) will inhibit growth, but only if the relative humidity is low enough to prevent water condensation (i.e., the dew point is not reached).\n Warm, growth-favouring temperatures coupled with high relative humidity, however, will set the stage for mildew growth.\n They can also inhibit mildew growth by lowering indoor temperatures. [<a href='https://en.wikipedia.org/wiki/Mildew' > https://en.wikipedia.org/wiki/Mildew </a>,<a href='https://www.britannica.com/science/mildew'>https://www.britannica.com/science/mildew </a>,<a href='https://www.goldeagle.com/tips-tools/mold-vs-mildew-whats-difference/'> https://www.goldeagle.com/tips-tools/mold-vs-mildew-whats-difference/ </a>])";
+            return output[0];
+            //return "(In Old English, mildew meant honeydew (a substance secreted by aphids on leaves, formerly thought to distill from the air like dew), and later came to mean mould or fungus.\n Mould growth found on cellulose-based substrates or materials where moisture levels are high (90 percent or greater) is often Stachybotrys chartarum.\n Glass, plastic, and concrete provide no food for organic growth and as such cannot support mould or mildew growth alone without bio-film present.\n == Environmental conditions ==\n The requirements are a food source (any organic material), sufficient ambient moisture (a relative humidity of between 62 and 93 percent), and reasonable warmth (77 °F (25 °C) to 88 °F (31 °C) is optimal, but some growth can occur anywhere between freezing and 95 °F (35 °C)).\n Preventing the growth of mildew therefore requires a balance between moisture and temperature.\n Air temperatures at or below 70 °F (21 °C) will inhibit growth, but only if the relative humidity is low enough to prevent water condensation (i.e., the dew point is not reached).\n Warm, growth-favouring temperatures coupled with high relative humidity, however, will set the stage for mildew growth.\n They can also inhibit mildew growth by lowering indoor temperatures. [<a href='https://en.wikipedia.org/wiki/Mildew' > https://en.wikipedia.org/wiki/Mildew </a>,<a href='https://www.britannica.com/science/mildew'>https://www.britannica.com/science/mildew </a>,<a href='https://www.goldeagle.com/tips-tools/mold-vs-mildew-whats-difference/'> https://www.goldeagle.com/tips-tools/mold-vs-mildew-whats-difference/ </a>])";
         }
 
 

@@ -21,13 +21,13 @@ def make_prediction(path):
     image=cv2.imread(path)
     image =preprocessing([image])
     pred=model2.predict(image)
-    classes={0: 'Apple scab',
+    classes={0: 'Apple_scab',
  1: 'Black_rot',
- 2: 'Cedar_apple_rust',
+ 2: 'Gymnosporangium',
  3: 'healthy_apple',
  4: 'Black_rot',
- 5: 'Esca(Black_Measles)',
- 6: 'Leafblight(Isariopsis_Leaf_Spot)',
+ 5: 'Esca_Black_Measles',
+ 6: 'Isariopsis_Leaf_Spot',
  7: 'healthy_grape'}
     return(classes[pred.argmax()])
 def main():

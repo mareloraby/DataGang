@@ -33,7 +33,7 @@ def disease_info(query: str) -> (list, str):
 
   urls = []
   for url in search(query, tld="co.in", num=10, stop=10, pause=2):
-      urls.append(url)
+      urls.append("<a href='{}'>{}</a>".format(url, url))
 
   return summ_words, urls
 def main():

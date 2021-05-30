@@ -247,6 +247,8 @@ namespace DataGang
             proc.WaitForExit();
             proc.Close();
             //Console.ReadLine();
+            //  return output[0];
+
             return "Mildew";
         }
 

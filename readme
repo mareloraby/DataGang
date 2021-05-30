@@ -1,0 +1,38 @@
+To run the application, the following python packages are required:
+os
+sys
+numpy
+tensorflow
+matplotlib
+pyplot
+keras
+spaCy
+en_core_web_sm
+wikipedia
+gensim==3.8.1
+argparse
+googlesearch 
+pathlib 
+cv2
+
+Alternatively, in Homepage.aspx.cs, you can get stub returns values from methods by:
+- commenting line 282 and uncommenting line 283 to get dummy info and links
+- commenting line 250 and uncommenting line 251to get a diagnosis from thes set: ('Apple_scab',
+  'Black_rot',
+  'Gymnosporangium',
+  'healthy_apple',
+  'Black_rot',
+  'Esca_Black_Measles',
+  'Isariopsis_Leaf_Spot',
+  'healthy_grape', 
+'Diamondback_moth',
+ 'Leafminer',
+ 'Mildew',
+ 'Bacterial_spot',
+ 'Black_mold',
+ 'Gray_spot',
+'Tomato_Late_blight',
+'Healthy_Tomato',
+ 'Powdery_mildew',
+'Healthy potato',
+ 'potato_late_blight')

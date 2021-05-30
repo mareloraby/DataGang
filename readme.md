@@ -1,6 +1,6 @@
 
-![Alt Text](https://github.com/mareloraby/DataGang/blob/master/DataGang/assets/img/BugQuestyellows.png)
-# Bug Quest, a web-application, targeted for farmers and home gardeners.
+![Bug Quest](https://github.com/mareloraby/DataGang/blob/master/DataGang/assets/img/BugQuestyellows.png)
+## Bug Quest, a web-application, targeted for farmers and home gardeners.
 
 
 

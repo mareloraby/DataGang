@@ -116,8 +116,9 @@ namespace DataGang
 
                         
                           diagnosis = EntryPoint.func(prog, newdire);
+                          Session["field1"] = diagnosis;
 
-                        
+
 
                         Label1.Text = diagnosis;
                         string infoprog = Server.MapPath("./summary_link.py");
@@ -176,9 +177,10 @@ namespace DataGang
             // treat[14] = new tuple("Potato", "Healthy potato", "", "", "");
             treat[14] = new tuple("Potato", "potato_late_blight", "copper spray", "Serenade", "chlorothalonil");
 
-            String treatment = "vvv";
+            String treatment = "You may try any of: ";
             String planttype2 = DropDownList1.SelectedItem.Text;
-            String diagnosis1 = Label1.Text;
+            String diagnosis1 = (String) Session["field1"]; 
+
             for (int i = 0; i < treat.Length; i++)
 
             {
@@ -277,13 +279,13 @@ namespace DataGang
             proc.Close();
             //Console.ReadLine();
             //  return output[0];
-            return "(A leaf miner is any one of numerous species of insects in which the larval stage lives in, and eats, the leaf tissue of plants.\n Like woodboring beetles, leaf miners are protected from many predators and plant defenses by feeding within the tissues of the leaves, selectively eating only the layers that have the least amount of cellulose.\n When attacking Quercus robur (English oak), they also selectively feed on tissues containing lower levels of tannin, a deterrent chemical produced in great abundance by the tree.The pattern of the feeding tunnel and the layer of the leaf being mined is often diagnostic of the insect responsible, sometimes even to species level.\n The mine often contains frass, or droppings, and the pattern of frass deposition, mine shape, and host plant identity are useful to determine the species and instar of the leaf miner.\n Spraying the infected plants with spinosad, an organic insecticide, can control some leaf miners.\n The leaf and stem mines of British flies and other insects.\n Includes illustrated keys for identification of mines by host-plant genus and detailed descriptions of over 900 species along with their distribution in Great Britain and Northern Ireland and elsewhere. [<a href='https://www.planetnatural.com/pest-problem-solver/houseplant-pests/leafminer-control/'> Link1 </a>, https://www.gardeningknowhow.com/plant-problems/pests/insects/leaf-miner-control.htm, https://www.gardeningknowhow.com/plant-problems/pests/insects/june-bug-beetles.htm, https://www.gardeningknowhow.com/special/organic/what-are-organic-pesticides.htm, https://www.gardeningknowhow.com/plant-problems/pests/insects/beneficial-insects.htm, https://en.wikipedia.org/wiki/Leaf_miner, https://www.pestnet.org/fact_sheets/leafminers_110.htm, https://extension.umn.edu/yard-and-garden-insects/leafminers, https://www.epicgardening.com/leaf-miner/, https://www2.ipm.ucanr.edu/agriculture/lettuce/Leafminers/])";
+            return "(In Old English, mildew meant honeydew (a substance secreted by aphids on leaves, formerly thought to distill from the air like dew), and later came to mean mould or fungus.\n Mould growth found on cellulose-based substrates or materials where moisture levels are high (90 percent or greater) is often Stachybotrys chartarum.\n Glass, plastic, and concrete provide no food for organic growth and as such cannot support mould or mildew growth alone without bio-film present.\n == Environmental conditions ==\n The requirements are a food source (any organic material), sufficient ambient moisture (a relative humidity of between 62 and 93 percent), and reasonable warmth (77 °F (25 °C) to 88 °F (31 °C) is optimal, but some growth can occur anywhere between freezing and 95 °F (35 °C)).\n Preventing the growth of mildew therefore requires a balance between moisture and temperature.\n Air temperatures at or below 70 °F (21 °C) will inhibit growth, but only if the relative humidity is low enough to prevent water condensation (i.e., the dew point is not reached).\n Warm, growth-favouring temperatures coupled with high relative humidity, however, will set the stage for mildew growth.\n They can also inhibit mildew growth by lowering indoor temperatures. [<a href='https://en.wikipedia.org/wiki/Mildew' > https://en.wikipedia.org/wiki/Mildew </a>,<a href='https://www.britannica.com/science/mildew'>https://www.britannica.com/science/mildew </a>,<a href='https://www.goldeagle.com/tips-tools/mold-vs-mildew-whats-difference/'> https://www.goldeagle.com/tips-tools/mold-vs-mildew-whats-difference/ </a>])";
         }
 
 
 
 
-      
+
     }
 
     public class tuple

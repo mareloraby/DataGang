@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Homepage.aspx.cs" Inherits="DataGang.Homepage" %>
+ 
 
 <!DOCTYPE html>
 
@@ -133,7 +134,7 @@
                              <label for="btnUpload" class="btn btn-primary btn-xl text-uppercase"  > 3. Get Diagnosis! </label>
                           <asp:button id="btnUpload" type="submit" text="3. Get Diagnosis!" hidden="hidden" runat="server" class="btn btn-primary btn-xl text-uppercase" ></asp:button>
                             </br>
-                            <asp:Label ID="Label1" runat="server" ></asp:Label>
+                            <asp:Label ID="Label1" runat="server" style="  font-weight: bold;"></asp:Label>
                             <br/>
 
                             <asp:Label ID="Labelsummary" runat="server" Text="" style="overflow-wrap: break-word;"></asp:Label>
@@ -149,7 +150,7 @@
                     <div class="timeline-panel">
                         <div class="timeline-heading">
                            <label for="btnTreat" class="btn btn-primary btn-xl text-uppercase"  > 4. Recommended Treatements </label>
-                            <asp:button ID="btnTreat" type="submit"  Text=" 4. Recommended Treatements" hidden="hidden"  runat="server" OnClick="btnTreat_Click" ></asp:button>
+                            <asp:button ID="btnTreat" type="submit"  Text=" 4. Recommended Treatements" hidden="hidden"  runat="server" OnClick="btnTreat_Click"  ></asp:button>
                             <br/>
                             <asp:Label ID="lbltreat" runat="server" Text=""></asp:Label>
 

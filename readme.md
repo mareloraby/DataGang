@@ -153,7 +153,7 @@ wrapt                     1.12.1                   pypi_0    pypi
 
   ```
 
-## Contributers:
+## Data Gang Team
 
 🐜 Abdelrahman ElMoghazy
 

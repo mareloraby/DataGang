@@ -2,6 +2,8 @@
 ![Bug Quest](https://github.com/mareloraby/DataGang/blob/master/DataGang/assets/img/BugQuestyellows.png)
 ## Bug Quest, a web-application, targeted for farmers and home gardeners.
 
+Bug Quest helps farmers identify the disease a plant has, provides a description, and suggests possible pesticides or remedies.
+It also allows contacting an expert for more details.
 
 
 ## Image uploading guidlines
